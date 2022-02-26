@@ -14,9 +14,13 @@ runs:
   steps:
     - run: |
         wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
+        echo "ok"
         sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
+        echo "ok"
         percona-release enable-only tools
+        echo "ok"
         apt update
+        echo "ok"
         sudo apt install percona-xtrabackup-80
         echo "ok"
       shell: bash
