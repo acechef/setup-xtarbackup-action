@@ -13,14 +13,18 @@ runs:
   using: composite
   steps:
     - run: |
-        wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
-        echo "ok"
-        sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
-        echo "ok"
-        percona-release enable-only tools
-        echo "ok"
-        apt update
-        echo "ok"
-        sudo apt install percona-xtrabackup-80
-        echo "ok"
+        wget https://downloads.percona.com/downloads/Percona-XtraBackup-LATEST/Percona-XtraBackup-8.0.26-18/binary/debian/focal/x86_64/percona-xtrabackup-80_8.0.26-18-1.focal_amd64.deb
+        echo "download ok!"
+        sudo dpkg -i percona-xtrabackup-80_8.0.26-18-1.focal_amd64.deb
+        echo "install ok"
+#        wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
+#        echo "ok"
+#        sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
+#        echo "ok"
+#        percona-release enable-only tools
+#        echo "ok"
+#        apt update
+#        echo "ok"
+#        sudo apt install percona-xtrabackup-80
+#        echo "ok"
       shell: bash
