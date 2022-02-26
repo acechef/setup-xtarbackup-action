@@ -19,7 +19,7 @@ runs:
         echo "dpkg ok"
         sudo percona-release setup ps80
         echo "setup ps80 ok"
-        apt-get update
+        sudo apt-get update
         echo "update ok"
         sudo apt install percona-xtrabackup-80
         echo "install ok"
