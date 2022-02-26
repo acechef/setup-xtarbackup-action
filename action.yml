@@ -23,4 +23,5 @@ runs:
         echo "update ok"
         sudo apt install percona-xtrabackup-80
         echo "install ok"
+        innobackupex -h
       shell: bash
