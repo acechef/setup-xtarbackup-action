@@ -1,0 +1,22 @@
+name: "Xtrabackup Tool Installer"
+description: "Install a specific version of Xtrabackup"
+author: "acechef"
+branding:
+  color: red
+  icon: database
+inputs:
+  version:
+    description: "Version of Xtrabackup"
+    required: true
+    default: "8.0"
+runs:
+  using: composite
+  steps:
+    - run: |
+        wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
+        sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
+        percona-release enable-only tools
+        apt update
+        sudo apt install percona-xtrabackup-80
+        echo "ok"
+      shell: bash
