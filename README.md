@@ -1,1 +1,1 @@
-# setup-xtarbackup-action
+# setup-xtrabackup-action
